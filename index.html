@@ -1,186 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>Easy Fullscreen HTML5 Background Video</title>
-  <meta name="keywords" content="css3, html5, js, background video, fullscreen video">
-  <meta name="description" content="Super easy to implement HTML5 fullscreen background video library in JavaScript.">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Options page</title>
 
-  <style>
-    * {
-      margin: 0; padding: 0;
-    }
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    #container {
-      overflow: hidden;
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-    }
-    #background_video {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    #video_cover {
-      position: absolute;
-      width: 100%; height: 100%;
-      background: url('video_cover.jpeg') no-repeat;
-      background-size: cover;
-      background-position: center;
-    }
-    /* Demo page specific styles */
-    body {
-      text-align: center;
-      font-family: 'proxima-nova', Helvetica;
-    }
-    #container {
-      height: 100%;
-    }
-    #overlay {
-      position: absolute;
-      top: 0; right: 0; left: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-    }
-    #main_content {
-      z-index: 2;
-      position: relative;
-      display: inline-block;
-      /* Vertical center */
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    #main_content h1 {
-      text-transform: uppercase;
-      font-weight: 600;
-      font-family: 'proxima-nova-condensed', Helvetica;
-      color: #fff;
-      font-size: 35px;
-    }
-    #main_content .sub_head {
-      color: rgba(255,255,255,0.5);
-      font-size: 18px;
-    }
-    #links {
-      margin-top: 50px;
-    }
-    #links a {
-      border: 2px solid rgba(255,255,255,0.20);
-      border-radius: 61px;
-      font-size: 12px;
-      color: #FFFFFF;
-      letter-spacing: 1px;
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 10px 25px;
-      display: inline-block;
-      margin-right: 15px;
-    }
-    #footer {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-    }
-    #footer a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      margin: 10px;
-      font-size: 12px;
-    }
-    #footer a:first-child {
-      float: left;
-    }
-    #footer a:last-child {
-      float: right;
-    }
-  </style>
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/libs/normalize.min.css">
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/libs/tooltip/tooltip.min.css" />
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/libs/tooltip/tooltip-animation.min.css" />
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/libs/switch_checkbox.css" />
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/libs/tabs.css" />
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/libs/loader.min.css" />
+
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/theme.css" />
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/global.css" />
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/options.css" />
+   <link rel="stylesheet" href="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/css/appearance.css" />
+
+   <!-- libs -->
+   <script src="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/js/libs/localization.js"></script>
+   <script src="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/js/libs/storage.js"></script>
+   <script src="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/js/libs/retrieve-ui.js"></script>
+   <script src="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/js/libs/options.js"></script>
+
+   <!-- scripts -->
+   <script src="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/js/plugins.js"></script>
+   <script src="https://raw.githubusercontent.com/raingart/New-Horizons-for-YouTube-extension/master/js/optionsBilder.js"></script>
 </head>
-<body>
-  <div id="container">
-    <video id="background_video" loop muted autoplay>
-    <source src="http://ak4.picdn.net/shutterstock/videos/4170274/preview/stock-footage-beautiful-girl-lying-on-the-meadow-and-dreaming-enjoy-nature-close-up-slow-motion-footage.mp4"   type="video/mp4">
-    </video>
-    <div id="video_cover"></div>
-    <div id="overlay"></div>
 
-    <section id="main_content">
-      <div id="head">
-        <h1>Bideo.js</h1>
-        <p class="sub_head">A JS library that makes it super easy to add fullscreen background videos.</p>
+<body class="preload">
+
+   <div class="loader">
+      <i class="layer"></i>
+      <i class="layer"></i>
+      <i class="layer"></i>
+   </div>
+
+   <div class="wrapper">
+      <div class="container">
+
+         <form enctype="multipart/form-data">
+
+            <div class="tabbed">
+               <input type="radio" name="tabs" id="tab_1" checked>
+               <label for="tab_1">Map</label>
+
+               <input type="radio" name="tabs" id="tab_2">
+               <label for="tab_2" id="show_all_plugins" tooltip="All plugins" flow="down">Plugins</label>
+
+               <input type="radio" name="tabs" id="tab_3">
+               <label for="tab_3">Other</label>
+
+               <div class="tabs-content">
+
+                  <!-- map -->
+                  <div class="appearance_container">
+                     <div class="appearance">
+                        <div class="header" id="header">
+                           <span>Header</span>
+                        </div>
+                        <div class="player" id="player">
+                           <span>Player</span>
+                        </div>
+                        <div class="sidebar" id="sidebar">
+                           <span>Sidebar</span>
+                        </div>
+                        <div class="details" id="details">
+                           <span>Details</span>
+                        </div>
+                        <div class="comments" id="comments">
+                           <span>Comments</span>
+                        </div>
+                        <div class="footer" id="footer">
+                           <span>Footer</span>
+                        </div>
+                        <div class="other" id="other">
+                           <span>Other</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- plugins -->
+                  <div>
+                     <!-- <form enctype="multipart/form-data"> -->
+                     <div class="between">
+                        <input type="search" id="search" title="filter item"
+                           placeholder="__MSG_plugins_search_placeholder__" />
+                        <button type="submit" tooltip="__MSG_opt_btn_save_settings_tooltip__"
+                           flow="left">__MSG_opt_btn_save_settings__</button>
+                     </div>
+
+                     <div id="plugins">
+                        <ul id="player" class="active"></ul>
+                        <ul id="other" class="active"></ul>
+                        <ul id="details" class="active"></ul>
+                        <ul id="sidebar" class="active"></ul>
+                        <ul id="comments" class="active"></ul>
+                        <ul id="header" class="active"></ul>
+                        <ul id="footer" class="active"></ul>
+                     </div>
+
+                     <!-- <hr /> -->
+
+                     <!-- <div class="item">
+                        <div class="info" tooltip="__MSG_opt_example_tooltip__" flow="left">
+                           <label for="id-example">__MSG_opt_example__
+                              <span>__MSG_opt_example_desc__</span>
+                           </label>
+                        </div>
+                        <div class="opt">
+                           <input type="checkbox" name="id-example" id="id-example" />
+                        </div>
+                     </div> -->
+
+                     <!-- </form> -->
+                  </div>
+
+                  <!-- about -->
+                  <div>
+                     <div class="between">
+                        <input type="text" name="custom-api-key" id="custom-api-key" pattern="^(AIzaSy)[\d\w]+"
+                        placeholder="__MSG_opt_btn_api_key_input__">
+                        <button type="submit" tooltip="" flow="right">__MSG_opt_btn_save_settings__</button>
+                     </div>
+
+                     <ul>
+                        <li>
+                           <a href="https://console.developers.google.com/apis/credentials" target="_blank">__MSG_opt_api_key_generate__</a>
+                        </li>
+                     </ul>
+
+                     <hr />
+
+                     <div class="between">
+                        <label for="disable_in_frame" tooltip="__MSG_opt_disable_in_frame_tooltip__">__MSG_opt_disable_in_frame__</label>
+                        <input type="checkbox" name="disable_in_frame" id="disable_in_frame" />
+
+                        <label for="report_issues" tooltip="__MSG_opt_report_issues_tooltip__">__MSG_opt_report_issues__</label>
+                        <input type="checkbox" name="report_issues" id="report_issues" />
+                     </div>
+
+                     <hr />
+
+                     <ul>
+                        <li>
+                           <a href="https://github.com/raingart/YouTubeCore-extension" target="_blank"
+                              tooltip="__MSG_github_page_tooltip__" flow="right">__MSG_github_page__</a>
+                        </li>
+                        <li>
+                           <a href="https://github.com/raingart/YouTubeCore-extension/issues/new" target="_blank"
+                              tooltip="__MSG_github_page_issues_tooltip__" flow="right">__MSG_github_page_issues__</a>
+                        </li>
+                        <li>
+                           <a href="https://www.patreon.com/join/raingart/checkout?rid=3120225" target="_blank"
+                              tooltip="__MSG_donate_tooltip__" flow="right">__MSG_donate__</a>
+                        </li>
+                     </ul>
+
+                  </div>
+
+               </div>
+
+            </div>
+
+         </form>
+
+
       </div>
+   </div>
 
-      <div id="links">
-        <a href="https://github.com/rishabhp/bideo.js">View on Github</a>
-        <a href="http://codetheory.in/html5-fullscreen-background-video/">How it works</a>
-      </div>
-    </section>
-  </div>
-
-  <div id="footer">
-    <a href="http://twitter.com/_rishabhp">Follow on Twitter</a>
-    <a href="https://www.youtube.com/watch?v=w7JrHIHi8t0" target="_blank">
-      Video by shortenit
-    </a>
-  </div>
-
-  <script src="bideo.js"></script>
-  <script src="main.js"></script>
-
-  <script>var video = document.querySelector('video')
-  , container = document.querySelector('#container');
-
-var setVideoDimensions = function () {
-  // Video's intrinsic dimensions
-  var w = video.videoWidth
-    , h = video.videoHeight;
-  
-  // Intrinsic Ratio
-  // Will be more than 1 if W > H and less if W < H
-  var videoRatio = (w / h).toFixed(2);
-  
-  // Get the container's computed styles
-  //
-  // Also calculate the min dimensions required (this will be
-  // the container dimentions)
-  var containerStyles = window.getComputedStyle(container)
-    , minW = parseInt( containerStyles.getPropertyValue('width') )
-    , minH = parseInt( containerStyles.getPropertyValue('height') );
-  
-  // What's the min:intrinsic dimensions
-  //
-  // The idea is to get which of the container dimension
-  // has a higher value when compared with the equivalents
-  // of the video. Imagine a 1200x700 container and
-  // 1000x500 video. Then in order to find the right balance
-  // and do minimum scaling, we have to find the dimension
-  // with higher ratio.
-  //
-  // Ex: 1200/1000 = 1.2 and 700/500 = 1.4 - So it is best to
-  // scale 500 to 700 and then calculate what should be the
-  // right width. If we scale 1000 to 1200 then the height
-  // will become 600 proportionately.
-  var widthRatio = minW / w
-    , heightRatio = minH / h;
-  
-  // Whichever ratio is more, the scaling
-  // has to be done over that dimension
-  if (widthRatio > heightRatio) {
-    var newWidth = minW;
-    var newHeight = Math.ceil( newWidth / videoRatio );
-  }
-  else {
-    var newHeight = minH;
-    var newWidth = Math.ceil( newHeight * videoRatio );
-  }
-  
-  video.style.width = newWidth + 'px';
-  video.style.height = newHeight + 'px';
-};
-
-video.addEventListener('loadedmetadata', setVideoDimensions, false);
-window.addEventListener('resize', setVideoDimensions, false);
-  </script>
 </body>
+
 </html>
