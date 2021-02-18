@@ -1,13 +1,8 @@
-const Storage = function () {
-   let saveParams = {};
+const Storage = {
+   setParams: x => localStorage.setItem('store', x),
 
-   return {
-      setParams(x = required(), sync_type) {
-         
-      },
-
-      getParams(callback, sync_type, x) {
-         callback()
-      },
-   }
-}();
+   getParams(callback, sync_type, x) {
+      const data = localStorage.getItem('store');
+      callback(data?.x);
+   },
+};
