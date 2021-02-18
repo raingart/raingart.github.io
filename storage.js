@@ -67,5 +67,5 @@ const localization = {
    }
 }
 
-const i18n = msg => localization[msg];
+const i18n = msg => localization[msg]?.message;
                
