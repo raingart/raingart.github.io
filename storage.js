@@ -7,7 +7,7 @@ const Storage = function () {
       },
 
       getParams(callback, sync_type, x) {
-         
+         callback()
       },
    }
 }();
