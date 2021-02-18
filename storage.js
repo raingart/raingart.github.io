@@ -5,7 +5,6 @@ const Storage = {
       const data = JSON.parse(localStorage.getItem('store'));
       callback(x ? data?.x : data);
    },*/
-               
-   setParams() {},
+   
    getParams: callback => callback(),
 };
