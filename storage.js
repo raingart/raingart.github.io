@@ -3,6 +3,6 @@ const Storage = {
 
    getParams(callback, sync_type, x) {
       const data = JSON.parse(localStorage.getItem('store'));
-      callback(data?.x);
+      callback(x ? data?.x : data);
    },
 };
