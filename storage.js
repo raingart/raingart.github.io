@@ -7,5 +7,5 @@ const Storage = {
    },*/
                
    setParams() {},
-   getParams() {},
+   getParams: () => callback(),
 };
