@@ -2,6 +2,10 @@ const Plugins = {
    // DEBUG: true,
 
    list: [
+      // 'plugins/_blank_plugin.js', // for example
+
+      // 'other/-test.js',
+
       'player/ad-skip-button.js',
       'player/speed.js',
       'player/volume.js',
@@ -13,6 +17,7 @@ const Plugins = {
       'player/focused.js',
       'player/pin.js',
       'player/time-jump.js',
+      'player/no-sleep.js',
       // 'player/show-progress-bar.js',
       // 'player/annotations.js',
       // 'player/stop.js', // incompatible with quality.js
@@ -31,6 +36,7 @@ const Plugins = {
       'comments/expand-comments.js',
 
       'sidebar/livechat-hide.js',
+      'sidebar/playlist-duration.js',
    ],
 
    load(list) {
