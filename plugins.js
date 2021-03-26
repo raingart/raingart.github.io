@@ -42,7 +42,7 @@ const Plugins = {
    load(list) {
       (list || this.list).forEach(plugin => {
          try {
-            this.injectScript('https://gitcdn.link/repo/raingart/New-Horizons-for-YouTube-extension/master/plugins/' + plugin);
+            this.injectScript('https://gitcdn.xyz/repo/raingart/Nova-YouTube-extension/master/plugins/' + plugin);
          } catch (error) {
             console.error(`plugin loading failed: ${plugin}\n${error.stack}`);
          }
