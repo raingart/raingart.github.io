@@ -1,7 +1,7 @@
 const Plugins = {
    // DEBUG: true,
 
-  list: [
+   list: [
       // 'plugins/_blank_plugin.js', // for example
 
       // 'other/-test.js',
@@ -9,7 +9,7 @@ const Plugins = {
       'player/ad-skip-button.js',
       'player/speed.js',
       'player/volume.js',
-      'player/volume-hud.js',
+      'player/hud.js',
       'player/quality.js',
       'player/pause.js', // after quality.js
       'player/theater-mode.js',
@@ -26,23 +26,23 @@ const Plugins = {
       'other/normalize-video-title.js',
       'other/thumbnail-clear.js',
       'other/default-tab.js',
+      'other/clear-redirect.js',
       'other/wake-up.js',
 
       'details/expand-description.js',
       'details/channel-video-count.js',
-      'details/clear-redirect.js',
 
       'comments/disable-comments.js',
       'comments/expand-comments.js',
 
-      'sidebar/livechat-hide.js',
       'sidebar/playlist-duration.js',
+      'sidebar/livechat-hide.js',
    ],
 
    load(list) {
       (list || this.list).forEach(plugin => {
          try {
-            this.injectScript('https://gitcdn.xyz/repo/raingart/Nova-YouTube-extension/master/plugins/' + plugin);
+            this.injectScript('https://ghcdn.rawgit.org/raingart/Nova-YouTube-extension/master/plugins/' + plugin);
          } catch (error) {
             console.error(`plugin loading failed: ${plugin}\n${error.stack}`);
          }
