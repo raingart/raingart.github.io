@@ -1,9 +1,8 @@
 const Plugins = {
    // DEBUG: true,
-
+   
    list: [
       // 'plugins/_blank_plugin.js', // for example
-
       // 'other/-test.js',
 
       'player/ad-skip-button.js',
@@ -17,7 +16,8 @@ const Plugins = {
       'player/focused.js',
       'player/pin.js',
       'player/time-jump.js',
-      // 'player/show-progress-bar.js',
+      'player/remaining-time.js',
+      'player/fly-progress-bar.js',
       // 'player/annotations.js',
       // 'player/stop.js', // incompatible with quality.js
 
@@ -25,7 +25,7 @@ const Plugins = {
       'other/rating-bars.js',
       'other/normalize-video-title.js',
       'other/thumbnail-clear.js',
-      'other/default-tab.js',
+      'other/channel-tab.js',
       'other/clear-redirect.js',
       'other/wake-up.js',
 
