@@ -67,16 +67,8 @@
       (document.head || document.documentElement).appendChild(script);
 
       script.onload = () => {
-         this.log('script loaded:', script.src || script.textContent.substr(0, 100));
+         //console.log('script loaded:', script.src || script.textContent.substr(0, 100));
          script.remove(script); // Remove <script> node after injectScript runs.
       };
    },
-
-   log(...args) {
-      if (this.DEBUG && args?.length) {
-         console.groupCollapsed(...args);
-         console.trace();
-         console.groupEnd();
-      }
-   }
 }
