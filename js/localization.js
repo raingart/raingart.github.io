@@ -29,7 +29,7 @@ const localization = {
       "message": "Generate API key"
    },
    "opt_disable_in_frame": {
-      "message": "Disable processing in iframe"
+      "message": "Disable in iframe"
    },
    "opt_disable_in_frame_tooltip": {
       "message": "All plugins will not work in iframe tag"
