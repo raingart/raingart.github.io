@@ -1,10 +1,5 @@
-const Plugins = {
-   // DEBUG: true,
-   
+  const Plugins = {
    list: [
-      // 'plugins/_blank_plugin.js', // for example
-      // 'other/-test.js',
-
       'player/ad-skip-button.js',
       'player/speed.js',
       'player/volume.js',
@@ -28,15 +23,20 @@ const Plugins = {
       'other/channel-tab.js',
       'other/clear-redirect.js',
       'other/wake-up.js',
+      'other/mark-watched.js',
 
       'details/expand-description.js',
       'details/channel-video-count.js',
 
       'comments/disable-comments.js',
       'comments/expand-comments.js',
+      'comments/square-avatars.js',
 
       'sidebar/playlist-duration.js',
       'sidebar/livechat-hide.js',
+
+      'header/unpin.js',
+      'header/short.js',
    ],
 
    load(list) {
