@@ -1,14 +1,8 @@
 
-               
+
 const localization = {
-   "localization": {
-      "message": "en"
-   },
-   "app_description": {
-      "message": "Combine plugins to make the YouTube™ experience better"
-   },
    "plugins_search_placeholder": {
-      "message": "filter..."
+      "message": "Search..."
    },
    "opt_btn_save_settings": {
       "message": "Save"
@@ -18,6 +12,30 @@ const localization = {
    },
    "opt_btn_save_settings_processed": {
       "message": "Saved!"
+   },
+   "opt_legend_settings_transfer": {
+      "message": "Settings transfer:"
+   },
+   "opt_title_help_link": {
+      "message": "More info"
+   },
+   "opt_btn_import_settings": {
+      "message": "Import"
+   },
+   "opt_prompt_import_settings": {
+      "message": "Not access in pop-up!\nOpen setting page?"
+   },
+   "opt_alert_import_successfully": {
+      "message": "Settings imported successfully!"
+   },
+   "opt_btn_export_settings": {
+      "message": "Export"
+   },
+   "opt_btn_reset_settings": {
+      "message": "Reset"
+   },
+   "opt_prompt_reset_settings": {
+      "message": "It is advised to backup your current settings before continuing.\nDelete all settings?"
    },
    "opt_btn_save_settings_tooltip": {
       "message": "Open tabs don't change"
@@ -40,6 +58,9 @@ const localization = {
    "opt_report_issues_tooltip": {
       "message": "Allow popup on YouTube pages"
    },
+   "opt_api_key_warn": {
+      "message": "Use your [API key] for stable work"
+   },
    "github_page": {
       "message": "Source Code"
    },
@@ -58,10 +79,10 @@ const localization = {
    "donate": {
       "message": "Donate"
    }
-}
+};
 
 const i18n = msg => localization[msg]?.message;
-               
+
 function localizePage() {
 	let html = document.getElementsByTagName('html')[0];
    html.innerHTML = internationalize(html.innerHTML)

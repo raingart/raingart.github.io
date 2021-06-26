@@ -2,31 +2,32 @@ const Plugins = {
    list: [
       // 'plugins/_blank_plugin.js', // for example
 
-      // 'other/-test.js',
-
       'player/ad-skip-button.js',
       'player/rate.js',
       'player/volume.js',
       'player/hud.js',
       'player/quality.js',
-      'player/autoause.js', // after quality.js
+      'player/autopause.js', // after quality.js
       'player/theater-mode.js',
       'player/tab-pause.js',
       'player/hotkeys-focused.js',
-      'player/pin.js',
+      'player/float-player.js',
       'player/time-jump.js',
       'player/time-remaining.js',
-      'player/fixed-progress-bar.js',
+      'player/float-progress-bar.js',
+      'player/screenshot.js',
       'player/no-sleep.js',
-      // 'player/annotations.js',
+      'player/loop.js',
+      'player/resume-playback.js',
       // 'player/stop.js', // incompatible with quality.js
 
-      'other/thumbnails-clear.js',
-      'other/thumbnails-title-normalize.js',
-      'other/thumbnails-rating.js',
-      'other/thumbnails-watched.js',
+      'other/thumbs-clear.js',
+      'other/thumbs-title-normalize.js',
+      'other/thumbs-rating.js',
+      // 'other/thumbs-watched.js', // outdated
       'other/channel-tab.js',
       'other/redirect-clear.js',
+      'other/title-time.js',
       'other/scroll-to-top.js',
 
       'details/description.js',
@@ -41,6 +42,7 @@ const Plugins = {
 
       'header/unfixed.js',
       'header/short.js',
+      'header/logo.js',
    ],
 
    load(list) {
