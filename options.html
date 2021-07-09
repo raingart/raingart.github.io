@@ -40,7 +40,16 @@
 
    <script>
       window.addEventListener('load', evt => {
-         window.location.hash == '#demo' && document.body.classList.remove("preload");
+         if (location.hash == '#demo') {
+            document.body.classList.remove("preload");
+            const style = document.createElement('style');
+            style.innerHTML = 
+            `li:not(:hover)>ul {
+                opacity: 1;
+                filter: none;
+            }`;
+            document.head.appendChild(style);
+         }
       });
    </script>
 
