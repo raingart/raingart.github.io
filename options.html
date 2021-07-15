@@ -14,19 +14,25 @@
       href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/libs/tooltip/tooltip-animation.min.css" />
    <link rel="stylesheet"
       href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/libs/switch_checkbox.css" />
-   <link rel="stylesheet" href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/libs/tabs.css" />
+   <link rel="stylesheet"
+      href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/libs/tabs.css" />
    <link rel="stylesheet"
       href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/libs/loader.min.css" />
 
-   <link rel="stylesheet" href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/theme.css" />
-   <link rel="stylesheet" href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/global.css" />
-   <link rel="stylesheet" href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/options.css" />
-   <link rel="stylesheet" href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/appearance.css" />
+   <link rel="stylesheet"
+      href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/theme.css" />
+   <link rel="stylesheet"
+      href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/global.css" />
+   <link rel="stylesheet"
+      href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/options.css" />
+   <link rel="stylesheet"
+      href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/appearance.css" />
 
    <!-- libs -->
    <script src="./js/localization.js"></script>
    <script src="./js/storage.js"></script>
-   <script src="https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/libs/retrieve-ui.js"></script>
+   <script
+      src="https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/libs/retrieve-ui.js"></script>
 
    <!-- scripts -->
    <script src="./js/plugins.js"></script>
@@ -37,8 +43,8 @@
          if (location.hash == '#demo') {
             document.body.classList.remove("preload");
             const style = document.createElement('style');
-            style.innerHTML =
-               `li:not(:hover)>ul {
+            style.innerHTML = 
+            `li:not(:hover)>ul {
                 opacity: 1;
                 filter: none;
             }`;
@@ -59,18 +65,20 @@
 
    <div class="wrapper">
       <div class="container">
-         <div class="tabbed">
-            <input type="radio" name="tabs" id="tab-map" checked>
-            <label for="tab-map">Map</label>
 
-            <input type="radio" name="tabs" id="tab-plugins">
-            <label for="tab-plugins" id="show_all_plugins" tooltip="All plugins" flow="down">Plugins</label>
+         <form enctype="multipart/form-data">
 
-            <input type="radio" name="tabs" id="tab-other">
-            <label for="tab-other">Other</label>
+            <div class="tabbed">
+               <input type="radio" name="tabs" id="tab-map" checked>
+               <label for="tab-map">Map</label>
 
-            <div class="tabs-content">
-               <form enctype="multipart/form-data">
+               <input type="radio" name="tabs" id="tab-plugins">
+               <label for="tab-plugins" id="show_all_plugins" tooltip="All plugins" flow="down">Plugins</label>
+
+               <input type="radio" name="tabs" id="tab-other">
+               <label for="tab-other">Other</label>
+
+               <div class="tabs-content">
 
                   <!-- map -->
                   <div class="appearance_container">
@@ -140,20 +148,17 @@
 
                      <ul>
                         <li>
-                           <a href="https://github.com/raingart/Nova-YouTube-extension/wiki/How-to-generate-a-YouTube-API-key%3F"
-                              target="_blank">__MSG_opt_api_key_generate__</a>
+                           <a href="https://github.com/raingart/Nova-YouTube-extension/wiki/How-to-generate-a-YouTube-API-key%3F" target="_blank">__MSG_opt_api_key_generate__</a>
                         </li>
                      </ul>
 
                      <hr />
 
                      <div class="between">
-                        <label for="disable_in_frame"
-                           tooltip="__MSG_opt_disable_in_frame_tooltip__">__MSG_opt_disable_in_frame__</label>
+                        <label for="disable_in_frame" tooltip="__MSG_opt_disable_in_frame_tooltip__">__MSG_opt_disable_in_frame__</label>
                         <input type="checkbox" name="disable_in_frame" id="disable_in_frame" />
 
-                        <label for="report_issues"
-                           tooltip="__MSG_opt_report_issues_tooltip__">__MSG_opt_report_issues__</label>
+                        <label for="report_issues" tooltip="__MSG_opt_report_issues_tooltip__">__MSG_opt_report_issues__</label>
                         <input type="checkbox" name="report_issues" id="report_issues" />
                      </div>
 
@@ -176,10 +181,13 @@
 
                   </div>
 
-               </form>
+               </div>
+
             </div>
 
-         </div>
+         </form>
+
+
       </div>
    </div>
 
