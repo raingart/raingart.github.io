@@ -46,6 +46,9 @@ const localization = {
    "opt_api_key_generate": {
       "message": "Generate API key"
    },
+   "disable_setting_button": {
+      "message": "Disable setting button"
+   },
    "opt_disable_in_frame": {
       "message": "Disable in iframe"
    },
