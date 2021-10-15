@@ -49,6 +49,9 @@ const localization = {
    "opt_disable_setting_button": {
       "message": "Disable setting button"
    },
+   "opt_disable_setting_button_tooltip": {
+      "message": "On Youtube pages"
+   },
    "opt_disable_in_frame": {
       "message": "Disable in iframe"
    },
