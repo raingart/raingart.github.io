@@ -83,13 +83,13 @@ const localization = {
       "message": "Support with Patreon"
    },
    "donate_patreon": {
-      "message": "Donate"
+      "message": "Donate (Patreon)"
    },
    "donate_buymeacoffee_tooltip": {
       "message": "Support with buymeacoffee.com"
    },
    "donate_buymeacoffee": {
-      "message": "buymeacoffee"
+      "message": "Donate (buymeacoffee)"
    }
 };
 
