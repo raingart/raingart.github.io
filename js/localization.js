@@ -79,10 +79,16 @@ const localization = {
    "github_page_issues_tooltip": {
       "message": "To Report"
    },
-   "donate_tooltip": {
+   "donate_patreon_tooltip": {
       "message": "Support with Patreon"
    },
-   "donate": {
+   "donate_patreon": {
+      "message": "Donate"
+   }
+   "donate_buymeacoffee_tooltip": {
+      "message": "Support with Patreon"
+   },
+   "donate_buymeacoffee": {
       "message": "Donate"
    }
 };
