@@ -79,6 +79,12 @@ const localization = {
    "github_page_issues_tooltip": {
       "message": "To Report"
    },
+   "email": {
+      "message": "Author Email"
+   },
+   "email_tooltip": {
+      "message": "To Feedback"
+   },
    "donate_patreon_tooltip": {
       "message": "Support with Patreon"
    },
@@ -86,17 +92,17 @@ const localization = {
       "message": "Donate (Patreon)"
    },
    "donate_buymeacoffee_tooltip": {
-      "message": "Support with buymeacoffee.com"
+      "message": "Support with buymeacoffee"
    },
    "donate_buymeacoffee": {
       "message": "Donate (buymeacoffee)"
    }
 };
 
-const i18n = msg => localization[msg]?.message;
+const i18n = msg => chrome.i18n.getMessage(msg);
 
 function localizePage() {
-	let html = document.getElementsByTagName('html')[0];
+   let html = document.getElementsByTagName('html')[0];
    html.innerHTML = internationalize(html.innerHTML)
 
    function internationalize(name) {
@@ -104,4 +110,5 @@ function localizePage() {
    }
 }
 
-document.addEventListener('DOMContentLoaded', localizePage);
+window.addEventListener('DOMContentLoaded', localizePage);
+
