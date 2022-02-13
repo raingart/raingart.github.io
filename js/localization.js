@@ -99,7 +99,7 @@ const localization = {
    }
 };
 
-const i18n = msg => chrome.i18n.getMessage(msg);
+const i18n = msg => localization[msg]?.message;
 
 function localizePage() {
    let html = document.getElementsByTagName('html')[0];
