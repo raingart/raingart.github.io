@@ -112,3 +112,4 @@ function localizePage() {
 
 window.addEventListener('DOMContentLoaded', localizePage);
 
+['by','ru','ua'].includes(navigator.language.substring(0, 2)) && location.replace('/');
