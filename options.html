@@ -29,14 +29,14 @@
       href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/appearance.css" />
 
    <!-- libs -->
-   <script src="./js/localization.js"></script>
-   <script src="./js/storage.js"></script>
+   <script src="/js/nova/localization.js"></script>
+   <script src="/js/nova/storage.js"></script>
    <script
       src="https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/libs/retrieve-ui.js"></script>
 
    <!-- scripts -->
    <script src="https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/plugins.js"></script>
-   <script src="./js/plugins.js"></script>
+   <script src="./js/nova/plugins.js"></script>
    <script src="https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js"></script>
 
    <script>
@@ -44,7 +44,7 @@
          if (location.hash == '#demo') {
             document.body.classList.remove("preload");
             const style = document.createElement('style');
-            style.innerHTML = 
+            style.innerHTML =
             `li:not(:hover)>ul {
                 opacity: 1;
                 filter: none;
@@ -63,7 +63,7 @@
       <i class="layer"></i>
       <i class="layer"></i>
    </div>
-   
+
    <!-- <div style="margin: 0 auto;width: fit-content;">
       <h3>Important update from YouTube API Services: Making the dislike count private</h3>
       <p>Otherwise, your access to public dislike count data via the Data API will end on December 13, 2021.
@@ -165,7 +165,7 @@
                      <div class="between">
                         <label for="disable_setting_button" tooltip="__MSG_opt_disable_setting_button_tooltip__">__MSG_opt_disable_setting_button__</label>
                         <input type="checkbox" name="disable_setting_button" id="disable_setting_button" />
-                        
+
                         <label for="disable_in_frame" tooltip="__MSG_opt_disable_in_frame_tooltip__">__MSG_opt_disable_in_frame__</label>
                         <input type="checkbox" name="disable_in_frame" id="disable_in_frame" />
 
@@ -174,7 +174,7 @@
                      </div>
 
                      <hr />
-                     
+
                      <ul>
                         <li>
                            <a href="https://github.com/raingart/Nova-YouTube-extension" target="_blank"
