@@ -4,6 +4,9 @@ const localization = {
    "plugins_search_placeholder": {
       "message": "Search..."
    },
+   "btn_plugins_search_clear_tooltip": {
+      "message": "Clear Search"
+   },
    "opt_btn_save_settings": {
       "message": "Save"
    },
@@ -46,44 +49,38 @@ const localization = {
    "opt_api_key_generate": {
       "message": "Generate API key"
    },
-   "opt_disable_setting_button": {
-      "message": "Disable setting button"
-   },
-   "opt_disable_setting_button_tooltip": {
-      "message": "On Youtube pages"
-   },
    "opt_disable_in_frame": {
       "message": "Disable in iframe"
    },
    "opt_disable_in_frame_tooltip": {
-      "message": "All plugins will not work in iframe tag"
+      "message": "The extension will not work in embed video"
    },
    "opt_report_issues": {
       "message": "Show prompting to report bugs"
    },
    "opt_report_issues_tooltip": {
-      "message": "Allow popup on YouTube pages"
+      "message": "Need allow pop-up on YouTube for prompting"
    },
    "opt_api_key_warn": {
       "message": "Use your [API key] for stable work"
    },
    "github_page": {
-      "message": "Source Code"
+      "message": "Source code"
    },
    "github_page_tooltip": {
       "message": "Open"
    },
    "github_page_issues": {
-      "message": "Report Bugs"
+      "message": "Report bugs"
    },
    "github_page_issues_tooltip": {
-      "message": "To Report"
+      "message": "To report"
    },
    "email": {
-      "message": "Author Email"
+      "message": "Contact email"
    },
    "email_tooltip": {
-      "message": "To Feedback"
+      "message": "To feedback"
    },
    "donate_patreon_tooltip": {
       "message": "Support with Patreon"
