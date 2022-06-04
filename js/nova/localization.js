@@ -93,7 +93,7 @@ const localization = {
    },
    "donate_buymeacoffee": {
       "message": "Donate (buymeacoffee)"
-   }
+   },
    "donate_paypal_tooltip": {
       "message": "Support with paypal"
    },
