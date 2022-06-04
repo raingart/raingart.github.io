@@ -94,6 +94,12 @@ const localization = {
    "donate_buymeacoffee": {
       "message": "Donate (buymeacoffee)"
    }
+   "donate_paypal_tooltip": {
+      "message": "Support with paypal"
+   },
+   "donate_paypal": {
+      "message": "Donate (paypal)"
+   }
 };
 
 const i18n = msg => localization[msg]?.message;
