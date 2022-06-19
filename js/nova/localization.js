@@ -70,6 +70,12 @@ const localization = {
    "opt_api_key_warn": {
       "message": "Use your [API key] for stable work"
    },
+   "lang_code_tooltip": {
+      "message": "Сhoice of localization"
+   },
+   "lang_code": {
+      "message": "Language"
+   },
    "github_page": {
       "message": "Source code"
    },
