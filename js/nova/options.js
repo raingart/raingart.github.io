@@ -120,7 +120,6 @@ const Conf = {
       if (settings) PopulateForm.fill(settings);
       this.attrDependencies();
       this.registerEventListener();
-      document.body.classList.remove('preload');
       // auto selects value on focus
       document.body.querySelectorAll('form input[type]').forEach(i => i.addEventListener('focus', i.select));
       this.btnSubmitAnimation.submitBtns = document.body.querySelectorAll('form [type=submit]');
