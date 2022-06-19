@@ -37,17 +37,17 @@
    <script src="https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js"></script>
 
    <script>
-         if (location.hash == '#demo') {
-            Conf.init = ()=>{};
-            document.body.classList.remove("preload");
-            const style = document.createElement('style');
-            style.innerHTML =
-               `li:not(:hover)>ul {
+      if (location.hash == '#demo') {
+         Conf.init = ()=>{};
+         window.addEventListener('load', () => document.body.classList.remove("preload"));
+         const style = document.createElement('style');
+         style.innerHTML =
+            `li:not(:hover)>ul {
                 opacity: 1;
                 filter: none;
             }`;
-            document.head.appendChild(style);
-         }
+         document.head.appendChild(style);
+      }
    </script>
 
 </head>
