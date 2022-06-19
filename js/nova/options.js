@@ -1,4 +1,4 @@
-console.debug('init options.js');
+console.debug('init options patch.js');
 
 Conf.init = settings => {
    if (settings) PopulateForm.fill(settings);
