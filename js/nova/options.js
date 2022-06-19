@@ -1,7 +1,5 @@
 console.debug('init options.js');
 
-// window.addEventListener('load', () => {
-
 const Conf = {
    attrDependencies() {
       document.body.querySelectorAll('[data-dependent]')
@@ -117,17 +115,5 @@ const Conf = {
          if (target.tagName.toLowerCase() == 'textarea') target.value = target.value.trim();
       });
    },
-
-   init(settings) {
-       PopulateForm.fill(settings);
-       this.attrDependencies();
-       this.registerEventListener();
-       document.body.classList.remove('preload');
-       // auto selects value on focus
-       document.body.querySelectorAll('form input[type]').forEach(i => i.addEventListener('focus', i.select));
-       this.btnSubmitAnimation.submitBtns = document.body.querySelectorAll('form [type=submit]');
-   },
 }
 
-//    Conf.init();
-// });
