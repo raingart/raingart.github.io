@@ -56,10 +56,10 @@ const localization = {
       "message": "On Youtube pages"
    },
    "opt_exclude_iframe": {
-      "message": "Disable in iframe"
+      "message": "Exclude iframe video"
    },
    "opt_exclude_iframe_tooltip": {
-      "message": "The extension will not work in embed video"
+      "message": "The extension will not work in embeded video"
    },
    "opt_report_issues": {
       "message": "Show prompting to report bugs"
