@@ -55,10 +55,10 @@ const localization = {
    "opt_disable_setting_button_tooltip": {
       "message": "On Youtube pages"
    },
-   "opt_disable_in_frame": {
+   "opt_exclude_iframe": {
       "message": "Disable in iframe"
    },
-   "opt_disable_in_frame_tooltip": {
+   "opt_exclude_iframe_tooltip": {
       "message": "The extension will not work in embed video"
    },
    "opt_report_issues": {
