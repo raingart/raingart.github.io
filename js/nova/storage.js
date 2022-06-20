@@ -8,5 +8,6 @@ const Storage = {
       callback(x ? data?.x : data);
    },*/
    
+   setParams: x => {},
    getParams: callback => callback(storeData),
 };
