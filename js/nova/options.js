@@ -1,7 +1,7 @@
 console.debug('init options patch.js');
 
 Conf.init = settings => {
-   console.debug('Conf.init', ...arguments);
+   console.debug('Conf.init', settings);
    if (settings) PopulateForm.fill(settings);
    Conf.attrDependencies();
    Conf.registerEventListener();
