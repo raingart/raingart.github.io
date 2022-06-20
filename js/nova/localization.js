@@ -35,6 +35,18 @@ const localization = {
    "opt_appearance_other": {
       "message": "Other"
    },
+   "tab_map": {
+      "message": "Map"
+   },
+   "tab_plugins": {
+      "message": "Plugins"
+   },
+   "tab_plugins_tooltip": {
+      "message": "All plugins"
+   },
+   "tab_other": {
+      "message": "Other"
+   },
    
    "opt_legend_settings_transfer": {
       "message": "Settings transfer:"
