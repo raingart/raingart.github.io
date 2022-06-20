@@ -16,6 +16,26 @@ const localization = {
    "opt_btn_save_settings_processed": {
       "message": "Saved!"
    },
+   
+   "opt_appearance_header": {
+      "message": "Header"
+   },
+   "opt_appearance_player": {
+      "message": "Player"
+   },
+   "opt_appearance_sidebar": {
+      "message": "Sidebar"
+   },
+   "opt_appearance_details": {
+      "message": "Details"
+   },
+   "opt_appearance_comments": {
+      "message": "Comments"
+   },
+   "opt_appearance_other": {
+      "message": "Other"
+   },
+   
    "opt_legend_settings_transfer": {
       "message": "Settings transfer:"
    },
