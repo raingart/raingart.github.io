@@ -6,5 +6,7 @@ const Storage = {
       callback(x ? data?.x : data);
    },*/
    
-   getParams: callback => callback(),
+   importData: data => Storage.data = data,
+   
+   getParams: callback => callback(data),
 };
