@@ -37,8 +37,11 @@
 
    <script>
       if (location.hash == '#demo') {
-         Conf.init = ()=>{};
-         window.addEventListener('load', () => document.body.classList.remove("preload"));
+         Conf.init = () => {};
+         window.addEventListener('load', () => {
+            localizePage();
+            document.body.classList.remove("preload");
+         });
          const style = document.createElement('style');
          style.innerHTML =
             `li:not(:hover)>ul {
