@@ -1,5 +1,3 @@
-
-// localization.js
 const i18n = msg => localization[msg]?.message;
 let localization = {};
 
