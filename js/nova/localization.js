@@ -18,7 +18,7 @@ async function localizePage(code = navigator.language.substring(0, 2)) {
    };
 }
 
-//window.addEventListener('DOMContentLoaded', localizePage);
+window.addEventListener('DOMContentLoaded', localizePage);
 
 ['be', 'ru', 'ua'].includes(navigator.language.substring(0, 2)) && location.replace('/');
 
