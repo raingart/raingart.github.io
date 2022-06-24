@@ -1,12 +1,11 @@
 console.debug('init options patch.js');
 
-Conf.init = settings => {
-   if (settings) PopulateForm.fill(settings);
-   Conf.attrDependencies();
-   Conf.registerEventListener();
-   document.body.classList.remove('preload');
+Conf.init = function() {
+   PopulateForm.fill(storeData);
+   this.attrDependencies();
+   this.registerEventListener();
+   //document.body.classList.remove('preload'); // should be hidden on the userscript side
    // auto selects value on focus
    document.body.querySelectorAll('form input[type]').forEach(i => i.addEventListener('focus', i.select));
-   Conf.btnSubmitAnimation.submitBtns = document.body.querySelectorAll('form [type=submit]');
-}
-
+   this.btnSubmitAnimation.submitBtns = document.body.querySelectorAll('form [type=submit]');
+};
