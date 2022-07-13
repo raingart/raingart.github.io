@@ -40,24 +40,6 @@
    <script src="https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/plugins.js"></script>
    <script src="./js/nova/plugins.js"></script>
    <script src="https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js"></script>
-
-   <script>
-      if (location.hash == '#demo') {
-         Conf.init = () => {};
-         window.addEventListener('load', () => {
-            localizePage();
-            document.body.classList.remove("preload");
-         });
-         const style = document.createElement('style');
-         style.innerHTML =
-            `li:not(:hover)>ul {
-                opacity: 1;
-                filter: none;
-            }`;
-         document.head.appendChild(style);
-      }
-   </script>
-
 </head>
 
 <body class="preload">
@@ -249,11 +231,26 @@
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJY05VMEQZ"></script>
    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
+      if (location.hash == '#demo') {
+         Conf.init = () => {};
+         window.addEventListener('load', () => {
+            localizePage();
+            document.body.classList.remove("preload");
+         });
+         const style = document.createElement('style');
+         style.innerHTML =
+            `li:not(:hover)>ul {
+                opacity: 1;
+                filter: none;
+            }`;
+         document.head.appendChild(style);
+         
+         window.dataLayer = window.dataLayer || [];
+         function gtag() { dataLayer.push(arguments); }
+         gtag('js', new Date());
 
-      gtag('config', 'G-SJY05VMEQZ');
+         gtag('config', 'G-SJY05VMEQZ');
+      }
    </script>
 
 </body>
