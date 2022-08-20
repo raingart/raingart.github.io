@@ -12,18 +12,20 @@ Conf.init = function() {
    }, this.storageMethod);
 };
 
-document.addEventListener('submit', form => {
-   let newSettings = {};
+window.addEventListener('load', () => {
+   document.addEventListener('submit', form => {
+      let newSettings = {};
 
-   for (let [key, value] of new FormData(form.target)) {
-      if (newSettings.hasOwnProperty(key)) { // SerializedArray
-         newSettings[key] += ',' + value; // add new
-         newSettings[key] = newSettings[key].split(','); // to array [old, new]
+      for (let [key, value] of new FormData(form.target)) {
+         if (newSettings.hasOwnProperty(key)) { // SerializedArray
+            newSettings[key] += ',' + value; // add new
+            newSettings[key] = newSettings[key].split(','); // to array [old, new]
 
-      } else {
-         newSettings[key] = value;
-      };
-   }
+         } else {
+            newSettings[key] = value;
+         };
+      }
 
-   console.log(newSettings);
+      console.log(newSettings);
+   });
 });
