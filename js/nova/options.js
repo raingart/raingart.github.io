@@ -12,10 +12,10 @@ Conf.init = function() {
    }, this.storageMethod);
 };
 
-document.addEventListener('submit', evt => {
+document.addEventListener('submit', form => {
    let newSettings = {};
 
-   for (let [key, value] of new FormData(form)) {
+   for (let [key, value] of new FormData(form.target)) {
       if (newSettings.hasOwnProperty(key)) { // SerializedArray
          newSettings[key] += ',' + value; // add new
          newSettings[key] = newSettings[key].split(','); // to array [old, new]
