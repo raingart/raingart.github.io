@@ -13,6 +13,7 @@ Conf.init = function() {
 };
 
 window.addEventListener('load', () => {
+   return;
    document.addEventListener('submit', form => {
       let newSettings = {};
 
@@ -26,6 +27,20 @@ window.addEventListener('load', () => {
          };
       }
 
-      console.log(newSettings);
+      //console.log(newSettings);
+      
+      (async () => {
+        const rawResponse = await fetch('https://', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newSettings)
+        });
+        //const content = await rawResponse.json();
+        //console.log(content);
+      })();
+      
    });
 });
