@@ -17,10 +17,9 @@
    <canvas id="canvas"></canvas>
 
    <div id="preloader-text">
-      <div id="preloader-text-title">raingart</div>
-      <button onclick="document.querySelector('audio').play()"
-         style="font-size: larger; outline-width: 0px !important; user-select: text !important;"> ♫ </button>
-      <audio id="theaudio" src="/musics/Jon Snow hip hop beatprod.Silent.mp3" loop controls autoplay></audio>
+      <div id="preloader-text-title" onclick="document.querySelector('audio').play()">raingart</div>
+      <!-- <button onclick="document.querySelector('audio').play()" style="font-size: larger; color:#000;"> ♫ </button> -->
+      <audio src="/musics/Jon Snow hip hop beatprod.Silent.mp3" loop controls autoplay style="display: none;"></audio>
    </div>
 
    <script src="/js/index/rendeRing.js"></script>
