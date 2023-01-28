@@ -1,8 +1,8 @@
 console.debug('init options patch.js');
 
-Conf.init = function() {
+PopulateForm.init = function() {
    Storage.getParams(settings => {
-      PopulateForm.fill(storeData);
+      this.fill(storeData);
       this.attrDependencies();
       this.registerEventListener();
       //document.body.classList.remove('preload'); // should be hidden on the userscript side
