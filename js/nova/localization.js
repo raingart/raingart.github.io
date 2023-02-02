@@ -118,7 +118,7 @@ let localization = {
       "message": "Open"
    },
    "github_page_issues": {
-      "message": "Report bugs"
+      "message": "Report a bugs"
    },
    "github_page_issues_tooltip": {
       "message": "To report"
