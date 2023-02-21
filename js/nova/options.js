@@ -4,7 +4,7 @@ PopulateForm.init = function() {
    Storage.getParams(settings => {
       this.fill(storeData);
       this.attrDependencies();
-      this.registerEventListener();
+      this.registerEventListeners();
       //document.body.classList.remove('preload'); // should be hidden on the userscript side
       // auto selects value on focus
       document.body.querySelectorAll('form input[type]').forEach(i => i.addEventListener('focus', i.select));
