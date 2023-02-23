@@ -79,7 +79,7 @@ let localization = {
       "message": "Open tabs don't change"
    },
    "opt_btn_api_key_input": {
-      "message": "custom Youtube API key"
+      "message": "API key"
    },
    "opt_api_key_generate": {
       "message": "Generate API key"
