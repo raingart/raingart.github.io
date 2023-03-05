@@ -14,7 +14,15 @@
    <script>
       document.getElementById('nova-embed-pass')
          .addEventListener('click', () => {
-            location.hostname = 'www.youtube.com';
+            const
+               vidID = new URLSearchParams(location.search).get('v'),
+               remove = (query = required()) => {
+                  const url = new URL(location);
+                  url.searchParams.delete(query.toString());
+                  return url.toString();
+               };
+
+            location.href = remove('v').replace('raingart.github.io/', 'www.youtube.com/embed/');
          });
    </script>
 
