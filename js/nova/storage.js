@@ -1,4 +1,4 @@
-const storageMethod;
+const storageMethod = null;
 let storeData;
 
 const Storage = {
