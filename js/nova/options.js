@@ -9,7 +9,7 @@ PopulateForm.init = function() {
       // auto selects value on focus
       document.body.querySelectorAll('form input[type]').forEach(i => i.addEventListener('focus', i.select));
       this.btnSubmitAnimation.submitBtns = document.body.querySelectorAll('form [type=submit]');
-   }, this.storageMethod);
+   });
 };
 
 window.addEventListener('load', () => {
