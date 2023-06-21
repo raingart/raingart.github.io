@@ -17,7 +17,7 @@ if (location.hash == '#demo') {
          }
       };
 }
-/*
+
 //injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js');
 
 function injectScript(source = required()) {
@@ -36,5 +36,5 @@ function injectScript(source = required()) {
       (document.head || document.documentElement).append(script);
       return script;
 }
-*/
+
 
