@@ -22,7 +22,7 @@ else {
    }
 }
 
-//injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js');
+injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js');
 
 function injectScript(source = required()) {
       const script = document.createElement('script');
