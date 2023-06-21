@@ -17,18 +17,28 @@ if (location.hash == '#demo') {
       };
 }
 else {
-   const Plugins = {
-      load(){},
-   }
+   injectScript(`
+         const Plugins = {
+            load(){},
+         }
+    `);
 }
 
-injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js');
+//injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js');
 
 function injectScript(source = required()) {
       const script = document.createElement('script');
-      script.src = source;
-      script.defer = true; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer:~:text=defer,-This
-      script.async = true;
+       if (source.endsWith('.js')) {
+         script.src = source;
+         script.defer = true; // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer:~:text=defer,-This
+         // script.async = true;
+      }
+      // injectCode
+      else {
+         script.textContent = source.toString();
+         // script.src = "data:text/plain;base64," + btoa(source);
+         // script.src = 'data:text/javascript,' + encodeURIComponent(source)
+      }
       (document.head || document.documentElement).append(script);
       return script;
 }
