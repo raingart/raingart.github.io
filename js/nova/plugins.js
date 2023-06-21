@@ -9,7 +9,7 @@ if (location.hash == '#demo') {
       script.onload = () => {
          Plugins.load = function (list) {
          (list || this.list)
-            //.filter(n => !n.includes('/+')) // skip some plugin
+            .filter(n => !n.includes('/+')) // skip some plugin
             .forEach(plugin => {
                try {
                   this.injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/plugins/' + plugin);
