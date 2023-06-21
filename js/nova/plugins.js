@@ -7,6 +7,7 @@ if (location.hash == '#demo') {
       (document.head || document.documentElement).append(script);
 
       script.onload = () => {
+            alert(1)
          Plugins.load = function (list) {
          (list || this.list)
             .filter(n => !n.includes('/+')) // skip some plugin
