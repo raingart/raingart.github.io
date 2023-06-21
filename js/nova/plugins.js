@@ -1,4 +1,8 @@
-Plugins.load = function (list) {
+const Plugins = {
+   load(){},
+}
+
+/*Plugins.load = function (list) {
    (list || this.list)
       .filter(n => !n.includes('/+')) // skip some plugin
       .forEach(plugin => {
@@ -8,4 +12,4 @@ Plugins.load = function (list) {
             console.error(`plugin loading failed: ${plugin}\n${error.stack}`);
          }
       })
-}
+}*/
