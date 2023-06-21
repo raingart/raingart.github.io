@@ -1,3 +1,4 @@
+const Plugins = { load(){}, };
 
 if (location.hash == '#demo') {
       const script = injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/plugins.js');
@@ -16,14 +17,7 @@ if (location.hash == '#demo') {
          }
       };
 }
-else {
-   injectScript(`
-         const Plugins = {
-            load(){},
-         }
-    `);
-}
-
+/*
 //injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/optionsBilder.js');
 
 function injectScript(source = required()) {
@@ -42,4 +36,5 @@ function injectScript(source = required()) {
       (document.head || document.documentElement).append(script);
       return script;
 }
+*/
 
