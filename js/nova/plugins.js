@@ -3,7 +3,6 @@ if (location.hash == '#demo') {
       const script = injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/plugins.js');
 
       script.onload = () => {
-            alert(1)
          Plugins.load = function (list) {
          (list || this.list)
             .filter(n => !n.includes('/+')) // skip some plugin
