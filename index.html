@@ -18,28 +18,25 @@
 
    <div id="preloader-text">
       <div id="preloader-text-title" onclick="playSong()">raingart</div>
-      <!-- <button onclick="document.querySelector('audio').play()" style="font-size: larger; color:#000;"> ♫ </button> -->
-      <audio loop controls autoplay style="display: none;"></audio>
    </div>
 
    <script src="/js/index/renderRing.js"></script>
 
    
    <script>
-      const songs = [
-        '/musics/Jon Snow hip hop beatprod.Silent.mp3',
-        '/musics/Krosah%20-%20E_S%20Posthumus%20-%20YUAULf3b8i0.m4a',
-      ];
-      
-      const nextSong = () => {
-        let count = -1;
-        return () => songs[++count % songs.length];
-      };
+      const nextSong = (function() {
+        const songs = [
+          '/musics/Jon Snow hip hop beatprod.Silent.mp3',
+          '/musics/Krosah%20-%20E_S%20Posthumus%20-%20YUAULf3b8i0.m4a',
+        ];
+        this.count = -1;
+        return () => songs[++this.count % songs.length];
+      }());
       
       const song = new Audio();
       
-      function playSong(index = nextSong()) {
-        song.src = songs[index];
+      function playSong() {
+        song.src = nextSong();
         song.play();
       }
       song.addEventListener('ended', playSong);
