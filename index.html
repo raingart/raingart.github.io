@@ -44,7 +44,7 @@
       const song = new Audio();
       
       function playSong() {
-        song.src = '/sounds/' + nextSong();
+        song.src = '/songs/' + nextSong();
         song.play();
       }
       song.addEventListener('ended', playSong);
