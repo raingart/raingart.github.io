@@ -49,9 +49,14 @@ body {
 }
 
 #preloader-text-title {
+   text-shadow: 1px 1px 2px white;
    line-height: 24px;
    letter-spacing: 7px;
    font-size: 1.4em;
+}
+
+#preloader-text-title:hover {
+   text-shadow: 1px 1px 2px #c4b4b4;
 }
 
 /*  */
