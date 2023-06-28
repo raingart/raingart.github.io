@@ -29,8 +29,14 @@
           '/musics/Jon Snow hip hop beatprod.Silent.mp3',
           '/musics/Krosah%20-%20E_S%20Posthumus%20-%20YUAULf3b8i0.m4a',
         ];
-        this.count = -1;
-        return () => songs[++this.count % songs.length];
+        //this.instance = -1;
+        //return () => songs[++this.instance % songs.length];
+        // radomised
+        this.instance;
+        return function() {
+          if (!this.instance?.length) this.instance = songs.slice();
+          return instance.splice(Math.random() * this.instance.length | 0, 1);
+        }
       }());
       
       const song = new Audio();
