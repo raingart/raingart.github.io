@@ -33,7 +33,7 @@
       
       const song = new Audio();
       let currSongIdx = -1;
-      const nextSongIdx = ()=> currSongIdx == songs.length ? 0 : currSongIdx + 1;
+      const nextSongIdx = () => { currSongIdx = currSongIdx > songs.length ? 0 : currSongIdx + 1; };
       
       function playSong(index = nextSongIdx()) {
         song.src = songs[index];
