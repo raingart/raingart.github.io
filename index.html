@@ -31,17 +31,18 @@
         '/musics/Krosah%20-%20E_S%20Posthumus%20-%20YUAULf3b8i0.m4a',
       ];
       
-      const song = new Audio();
-      let currSongIdx = -1;
-      const nextSongIdx = () => { currSongIdx = currSongIdx > songs.length ? 0 : currSongIdx + 1; };
+      const nextSong = () => {
+        let count = -1;
+        return () => songs[++count % songs.length];
+      };
       
-      function playSong(index = nextSongIdx()) {
+      const song = new Audio();
+      
+      function playSong(index = nextSong()) {
         song.src = songs[index];
         song.play();
       }
-      song.addEventListener('ended', function playNext() {
-        playSong(nextSongIdx());
-      });
+      song.addEventListener('ended', playSong);
    </script>
 
 </body>
