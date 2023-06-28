@@ -34,7 +34,7 @@
       const song = new Audio();
       let currSongIdx = 0;
       
-      function playSong(index = 0) {
+      function playSong(index = (currSongIdx + 1)) {
         song.src = songs[index];
         song.play();
       }
