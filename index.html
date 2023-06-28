@@ -32,15 +32,15 @@
       ];
       
       const song = new Audio();
-      let currSongIdx = 0;
+      let currSongIdx = -1;
+      const nextSongIdx = currSongIdx == songs.length ? 0 : currSongIdx + 1;
       
-      function playSong(index = (currSongIdx + 1)) {
+      function playSong(index = nextSongIdx()) {
         song.src = songs[index];
         song.play();
       }
       song.addEventListener('ended', function playNext() {
-        currSongIdx = currSongIdx == songs.length ? 0 : currSongIdx + 1;
-        playSong(currSongIdx);
+        playSong(nextSongIdx());
       });
    </script>
 
