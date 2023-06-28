@@ -19,7 +19,7 @@
    <div id="preloader-text">
       <div id="preloader-text-title" onclick="playSong()">raingart</div>
       <!-- <button onclick="document.querySelector('audio').play()" style="font-size: larger; color:#000;"> ♫ </button> -->
-      <audio src="/musics/Jon Snow hip hop beatprod.Silent.mp3" loop controls autoplay style="display: none;"></audio>
+      <audio loop controls autoplay style="display: none;"></audio>
    </div>
 
    <script src="/js/index/renderRing.js"></script>
@@ -32,18 +32,15 @@
       ];
       
       const song = new Audio();
-      let currentSongIdx = 0;
+      let currSongIdx = 0;
       
       function playSong(index = 0) {
         song.src = songs[index];
         song.play();
       }
       song.addEventListener('ended', function playNext() {
-         currentSong++;
-         if (currentSongIdx == songs.length) {
-           currentSong = 0;
-           playSong(currentSong);
-         }
+        currSongIdx = currSongIdx == songs.length ? 0 : currSongIdx + 1;
+        playSong(currSongIdx);
       });
    </script>
 
