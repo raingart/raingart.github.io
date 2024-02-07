@@ -4,7 +4,7 @@ let localization = {
       "message": "en"
    },
    "app_description": {
-      "message": "YouTube™ Enhancer"
+      "message": "Ultimate decision for YouTube™"
    },
    "tab_map": {
       "message": "Map"
@@ -39,17 +39,29 @@ let localization = {
    "opt_appearance_player": {
       "message": "Player"
    },
+   "opt_appearance_control_panel": {
+      "message": "Control Panel"
+   },
+   "opt_appearance_playlist": {
+      "message": "Playlist"
+   },
    "opt_appearance_sidebar": {
       "message": "Sidebar"
    },
    "opt_appearance_details": {
       "message": "Details"
    },
+   "opt_appearance_details_buttons": {
+      "message": "Buttons"
+   },
    "opt_appearance_comments": {
       "message": "Comments"
    },
    "opt_appearance_other": {
       "message": "Other"
+   },
+   "opt_appearance_thumbs": {
+      "message": "Thumbs"
    },
    "opt_legend_settings_transfer": {
       "message": "Settings transfer:"
@@ -91,10 +103,10 @@ let localization = {
       "message": "On Youtube pages"
    },
    "opt_exclude_iframe": {
-      "message": "Exclude iframe video"
+      "message": "Disable embedded players support"
    },
    "opt_exclude_iframe_tooltip": {
-      "message": "The extension will not work in embeded video"
+      "message": "The extension will not work in embedded video"
    },
    "opt_report_issues": {
       "message": "Show prompting to report bugs"
@@ -106,7 +118,7 @@ let localization = {
       "message": "Use your [API key] for stable work"
    },
    "lang_code_tooltip": {
-      "message": "Сhoice of localization"
+      "message": "Choice of localization"
    },
    "lang_code": {
       "message": "Language"
