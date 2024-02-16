@@ -34,21 +34,22 @@
 
 <body>
 
-   <div id="world-map" style="width: 600px; height: 400px"></div>
+   <div id="world-map" style="width: 100vw; height: 100vh"></div>
 
-   <div id="blocked"></div>
-   <div id="allowed"></div>
+   <div id="blocked"><h4>Allowed countries</h4></div>
+   <div id="allowed"><h4>Blocked countries</h4></div>
 
    <script>
       // Docs https://jvectormap.com/
       // store it in URL
       const videoId = getQueryURL('v');
+      const key = getQueryURL('key');
 
       let world_map;
       let allowedArr = [];
       let blockedArr = [];
 
-      videoId && fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoId}&key=AIzaSyC_Ms6NQD4h6EwV3RibF44774fETecNI4U`,
+      (videoId && key) && fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoId}&key=${key}`,
          {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             // mode: 'no-cors', // no-cors, *cors, same-origin
