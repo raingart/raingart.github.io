@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vector Map</title>
+   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+   <link rel="stylesheet"
+      href="https://raw.githack.com/raingart/Nova-YouTube-extension/master/css/libs/normalize.min.css">
+
+   <link rel="stylesheet" href="/region_map/css/jquery-jvectormap-2.0.5.css" type="text/css" media="screen" />
+
+   <script src="/region_map/js/jquery-3.4.1.min.js"></script>
+   <script src="/region_map/js/jquery-jvectormap-2.0.5.min.js"></script>
+   <script src="/region_map/js/jquery-jvectormap-world-mill.js"></script>
+
+   <style>
+      #world-map {
+         width: 100%;
+         height: 100%;
+      }
+
+      #blocked {}
+
+      #blocked div {}
+
+      #allowed {}
+
+      #allowed div {}
+   </style>
+</head>
+
+<body>
+
+   <div id="world-map"></div>
+
+   <div id="#blocked"></div>
+   <div id="#allowed"></div>
+
+   <script>
+      // store it in URL
+      const videoId = getQueryURL('v');
+
+      let world_map;
+      let allowedArr = [];
+      let blockedArr = [];
+
+      videoId && fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoId}&key=AIzaSyC_Ms6NQD4h6EwV3RibF44774fETecNI4U`,
+         {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            // mode: 'no-cors', // no-cors, *cors, same-origin
+            headers: { 'Content-Type': 'application/json' }, // 'Content-Type': 'application/x-www-form-urlencoded',
+         })
+         .then(response => response.json())
+         .then(data => {
+            if (data.items.length) {
+               const item = data.items[0];
+               let colors = []
+
+               if (item.contentDetails.hasOwnProperty('regionRestriction')) {
+                  if (item.contentDetails.regionRestriction.hasOwnProperty('blocked'))
+                     colors = gen_colors(item.contentDetails.regionRestriction.blocked, false);
+                  else
+                     colors = gen_colors(item.contentDetails.regionRestriction.allowed, true);
+               }
+               else {
+                  colors = gen_colors([], false);
+               }
+
+               world_map.series.regions[0].setValues(colors);
+
+               // var vid_link = $("<a></a>").attr({
+               //    'href': 'https://www.youtube.com/watch?v=' + item.id,
+               //    'target': '_blank'
+               // }).text(item.snippet.title);
+
+               if (blockedEl = document.getElementById('blocked')) {
+                  blockedArr.forEach(contry => {
+                     const div = document.createElement('div');
+                     div.textContent = 'contry'
+                     blockedEl.append(contry);
+                  })
+               }
+
+               if (allowedEl = document.getElementById('allowed')) {
+                  allowedArr.forEach(contry => {
+                     const div = document.createElement('div');
+                     div.textContent = 'contry'
+                     allowedEl.append(contry);
+                  })
+               }
+
+            }
+         })
+         .catch(error => {
+            console.error(`Failed fetching: ${error}`)
+         });
+
+
+      $(document).ready(function () {
+         const mapEl = $('#world-map');
+
+         mapEl.vectorMap({
+            map: 'world_mill',
+            backgroundColor: 'white',//'#D4EAFF',
+            container: mapEl,
+            regionStyle: {
+               initial: { fill: "#7cbbdd" },
+               stroke: 'red'
+            },
+            zoomButtons: true,
+            series: {
+               regions: [{
+                  attribute: 'fill'
+               }]
+            }
+         });
+
+         world_map = mapEl.vectorMap('get', 'mapObject');
+
+         // var url = hash_param('url');
+         // if (url) {
+         //    fill(url);
+         // }
+      });
+
+      function getQueryURL(query = required()) {
+         return new URL(location).searchParams.get(query.toString());
+      }
+
+      function gen_colors(codes, allowed) {
+         const color_allowed = '#cecbca';
+         const color_blocked = '#c92159';
+
+         let colors = {};
+         let temp = [];
+
+         for (const code in world_map.regions) {
+            if (codes.includes(code)) {
+               colors[code] = allowed ? color_blocked : color_allowed;
+               if (allowed) blockedArr.push(world_map.regions[code].config.name);
+               else allowedArr.push(world_map.regions[code].config.name);
+            }
+            else {
+               colors[code] = allowed ? color_allowed : color_blocked;
+               if (allowed) allowedArr.push(world_map.regions[code].config.name);
+               else blockedArr.push(world_map.regions[code].config.name);
+            }
+
+            temp.push(code);
+         }
+         return colors;
+      }
+   </script>
+</body>
+
+</html>
