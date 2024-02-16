@@ -36,8 +36,8 @@
 
    <div id="world-map" style="width: 600px; height: 400px"></div>
 
-   <div id="#blocked"></div>
-   <div id="#allowed"></div>
+   <div id="blocked"></div>
+   <div id="allowed"></div>
 
    <script>
       // Docs https://jvectormap.com/
@@ -56,10 +56,9 @@
          })
          .then(response => response.json())
          .then(data => {
-            if (data.items.length) {
-               const item = data.items[0];
+            data?.items?.forEach(item => {
+               // decorate series regions colors
                let colors = []
-
                if (item.contentDetails.hasOwnProperty('regionRestriction')) {
                   if (item.contentDetails.regionRestriction.hasOwnProperty('blocked'))
                      colors = gen_colors(item.contentDetails.regionRestriction.blocked, false);
@@ -77,6 +76,7 @@
                //    'target': '_blank'
                // }).text(item.snippet.title);
 
+               // fill out lists of countries
                if (blockedEl = document.getElementById('blocked')) {
                   blockedArr.forEach(contry => {
                      const div = document.createElement('div');
@@ -93,7 +93,7 @@
                   })
                }
 
-            }
+            });
          })
          .catch(error => {
             console.error(`Failed fetching: ${error}`)
