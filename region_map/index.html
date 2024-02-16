@@ -97,13 +97,13 @@
       // Docs https://jvectormap.com/
       // store it in URL
       const videoId = getQueryURL('v');
-      const key = getQueryURL('key');
+      const api_key = getQueryURL('api_key');
 
       let world_map;
       let allowedArr = [];
       let blockedArr = [];
 
-      (videoId && key) && fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoId}&key=${key}`,
+      (videoId && key) && fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoId}&key=${api_key}`,
          {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             // mode: 'no-cors', // no-cors, *cors, same-origin
