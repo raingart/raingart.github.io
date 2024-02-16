@@ -100,81 +100,6 @@
       let allowedArr = [];
       let blockedArr = [];
 
-      // fill out lists of countries
-      ['allowed', 'blocked']
-         .forEach(typeName => {
-            if (list = getQueryURL(typeName)?.split(',')) {
-
-               // decorate series regions colors
-               world_map.series.regions[0].setValues(
-                  gen_colors(list, typeName == 'blocked')
-               );
-
-               // fill out lists of countries
-               if (el = document.getElementById(typeName)) {
-                  list.forEach(contry => {
-                     const div = document.createElement('div');
-                     div.textContent = contry;
-                     el.append(div);
-                  });
-               }
-            }
-         });
-
-      // store it in URL
-      // const videoId = getQueryURL('v');
-      // const key = getQueryURL('api_key');
-      // (videoId && key) && fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoId}&key=${key}`,
-      //    {
-      //       method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      //       // mode: 'no-cors', // no-cors, *cors, same-origin
-      //       headers: { 'Content-Type': 'application/json' }, // 'Content-Type': 'application/x-www-form-urlencoded',
-      //    })
-      //    .then(response => response.json())
-      //    .then(data => {
-      //       data?.items?.forEach(item => {
-      //          // decorate series regions colors
-      //          let colors = []
-      //          if (item.contentDetails.hasOwnProperty('regionRestriction')) {
-      //             if (item.contentDetails.regionRestriction.hasOwnProperty('blocked'))
-      //                colors = gen_colors(item.contentDetails.regionRestriction.blocked, false);
-      //             else
-      //                colors = gen_colors(item.contentDetails.regionRestriction.allowed, true);
-      //          }
-      //          else {
-      //             colors = gen_colors([], false);
-      //          }
-
-      //          world_map.series.regions[0].setValues(colors);
-
-      //          // var vid_link = $("<a></a>").attr({
-      //          //    'href': 'https://www.youtube.com/watch?v=' + item.id,
-      //          //    'target': '_blank'
-      //          // }).text(item.snippet.title);
-
-      //          // fill out lists of countries
-      //          if (blockedEl = document.getElementById('blocked')) {
-      //             blockedArr.forEach(contry => {
-      //                const div = document.createElement('div');
-      //                div.textContent = contry;
-      //                blockedEl.append(div);
-      //             })
-      //          }
-
-      //          if (allowedEl = document.getElementById('allowed')) {
-      //             allowedArr.forEach(contry => {
-      //                const div = document.createElement('div');
-      //                div.textContent = contry;
-      //                allowedEl.append(div);
-      //             })
-      //          }
-
-      //       });
-      //    })
-      //    .catch(error => {
-      //       console.error(`Failed fetching: ${error}`)
-      //    });
-
       $(document).ready(function () {
          const mapEl = $('#world-map');
 
@@ -195,6 +120,30 @@
          });
 
          world_map = mapEl.vectorMap('get', 'mapObject');
+
+         // store it in URL
+         // ytApiRequest({ 'video_id': getQueryURL('v'), 'api_key': getQueryURL('api_key') });
+
+         // fill out lists of countries
+         ['allowed', 'blocked']
+            .forEach(typeName => {
+               if (list = getQueryURL(typeName)?.split(',')) {
+
+                  // decorate series regions colors
+                  world_map.series.regions[0].setValues(
+                     gen_colors(list, typeName == 'blocked')
+                  );
+
+                  // fill out lists of countries
+                  if (el = document.getElementById(typeName)) {
+                     list.forEach(contry => {
+                        const div = document.createElement('div');
+                        div.textContent = contry;
+                        el.append(div);
+                     });
+                  }
+               }
+            });
       });
 
       function getQueryURL(query = required()) {
@@ -224,6 +173,59 @@
          }
          return colors;
       }
+
+      // function ytApiRequest({ video_id = required(), api_key = required() }) {
+      //    fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${video_id}&key=${api_key}`,
+      //       {
+      //          method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      //          // mode: 'no-cors', // no-cors, *cors, same-origin
+      //          headers: { 'Content-Type': 'application/json' }, // 'Content-Type': 'application/x-www-form-urlencoded',
+      //       })
+      //       .then(response => response.json())
+      //       .then(data => {
+      //          data?.items?.forEach(item => {
+      //             // decorate series regions colors
+      //             let colors = []
+      //             if (item.contentDetails.hasOwnProperty('regionRestriction')) {
+      //                if (item.contentDetails.regionRestriction.hasOwnProperty('blocked'))
+      //                   colors = gen_colors(item.contentDetails.regionRestriction.blocked, false);
+      //                else
+      //                   colors = gen_colors(item.contentDetails.regionRestriction.allowed, true);
+      //             }
+      //             else {
+      //                colors = gen_colors([], false);
+      //             }
+
+      //             world_map.series.regions[0].setValues(colors);
+
+      //             // var vid_link = $("<a></a>").attr({
+      //             //    'href': 'https://www.youtube.com/watch?v=' + item.id,
+      //             //    'target': '_blank'
+      //             // }).text(item.snippet.title);
+
+      //             // fill out lists of countries
+      //             if (blockedEl = document.getElementById('blocked')) {
+      //                blockedArr.forEach(contry => {
+      //                   const div = document.createElement('div');
+      //                   div.textContent = contry;
+      //                   blockedEl.append(div);
+      //                })
+      //             }
+
+      //             if (allowedEl = document.getElementById('allowed')) {
+      //                allowedArr.forEach(contry => {
+      //                   const div = document.createElement('div');
+      //                   div.textContent = contry;
+      //                   allowedEl.append(div);
+      //                })
+      //             }
+
+      //          });
+      //       })
+      //       .catch(error => {
+      //          console.error(`Failed fetching: ${error}`)
+      //       });
+      // }
    </script>
 </body>
 
