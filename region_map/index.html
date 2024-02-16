@@ -87,10 +87,10 @@
    <div id="world-map"></div>
 
    <div id="blocked">
-      <h4>Allowed countries</h4>
+      <h4>Blocked countries</h4>
    </div>
    <div id="allowed">
-      <h4>Blocked countries</h4>
+      <h4>Allowed countries</h4>
    </div>
 
    <script>
@@ -122,27 +122,31 @@
          // store it in URL
          // ytApiRequest({ 'video_id': getQueryURL('v'), 'api_key': getQueryURL('api_key') });
 
+         let colors = [];
+         if (blockedParams = getQueryURL('blocked')?.split(',')) {
+            colors = setColors(blockedParams, false);
+         }
+         else if (allowedParams = getQueryURL('allowed')?.split(',')) {
+            colors = setColors(allowedParams, true);
+         }
+         // decorate series regions colors
+         world_map.series.regions[0].setValues(colors);
+
          // fill out lists of countries
-         ['allowed', 'blocked']
-            .forEach(typeName => {
-               if (list = getQueryURL(typeName)?.split(',')) {
-
-                  // decorate series regions colors
-                  world_map.series.regions[0].setValues(
-                     setColors(list, typeName == 'allowed')
-                  );
-
-                  // fill out lists of countries
-                  if (el = document.getElementById(typeName)) {
-                     (typeName == 'blocked' ? blockedArr : allowedArr)
-                        .forEach(contry => {
-                           const div = document.createElement('div');
-                           div.textContent = contry;
-                           el.append(div);
-                        });
-                  }
-               }
-            });
+         if (blockedEl = document.getElementById('blocked')) {
+            blockedArr.forEach(contry => {
+               const div = document.createElement('div');
+               div.textContent = contry;
+               blockedEl.append(div);
+            })
+         }
+         if (allowedEl = document.getElementById('allowed')) {
+            allowedArr.forEach(contry => {
+               const div = document.createElement('div');
+               div.textContent = contry;
+               allowedEl.append(div);
+            })
+         }
       });
 
       function getQueryURL(query = required()) {
