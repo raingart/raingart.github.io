@@ -129,7 +129,7 @@
 
                   // decorate series regions colors
                   world_map.series.regions[0].setValues(
-                     gen_colors(list, typeName == 'blocked')
+                     setColors(list, typeName == 'blocked')
                   );
 
                   // fill out lists of countries
@@ -186,12 +186,12 @@
       //             let colors = []
       //             if (item.contentDetails.hasOwnProperty('regionRestriction')) {
       //                if (item.contentDetails.regionRestriction.hasOwnProperty('blocked'))
-      //                   colors = gen_colors(item.contentDetails.regionRestriction.blocked, false);
+      //                   colors = setColors(item.contentDetails.regionRestriction.blocked, false);
       //                else
-      //                   colors = gen_colors(item.contentDetails.regionRestriction.allowed, true);
+      //                   colors = setColors(item.contentDetails.regionRestriction.allowed, true);
       //             }
       //             else {
-      //                colors = gen_colors([], false);
+      //                colors = setColors([], false);
       //             }
 
       //             world_map.series.regions[0].setValues(colors);
