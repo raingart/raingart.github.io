@@ -134,11 +134,12 @@
 
                   // fill out lists of countries
                   if (el = document.getElementById(typeName)) {
-                     list.forEach(contry => {
-                        const div = document.createElement('div');
-                        div.textContent = contry;
-                        el.append(div);
-                     });
+                     (typeName == 'blocked' ? blockedArr : allowedEl)
+                        .forEach(contry => {
+                           const div = document.createElement('div');
+                           div.textContent = contry;
+                           el.append(div);
+                        });
                   }
                }
             });
