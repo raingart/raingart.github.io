@@ -80,16 +80,16 @@
                if (blockedEl = document.getElementById('blocked')) {
                   blockedArr.forEach(contry => {
                      const div = document.createElement('div');
-                     div.textContent = 'contry'
-                     blockedEl.append(contry);
+                     div.textContent = contry;
+                     blockedEl.append(div);
                   })
                }
 
                if (allowedEl = document.getElementById('allowed')) {
                   allowedArr.forEach(contry => {
                      const div = document.createElement('div');
-                     div.textContent = 'contry'
-                     allowedEl.append(contry);
+                     div.textContent = contry;
+                     allowedEl.append(div);
                   })
                }
 
