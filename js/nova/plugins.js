@@ -1,4 +1,4 @@
-const Plugins = { load(){}, };
+Plugins = { load(){}, };
 
 if (location.hash == '#demo') {
       const script = injectScript('https://raw.githack.com/raingart/Nova-YouTube-extension/master/js/plugins.js');
@@ -13,8 +13,9 @@ if (location.hash == '#demo') {
                } catch (error) {
                   console.error(`plugin loading failed: ${plugin}\n${error.stack}`);
                }
-            })
-         }
+            });
+         };
+         Plugins.load();
       };
 }
 
@@ -36,5 +37,3 @@ function injectScript(source = required()) {
       (document.head || document.documentElement).append(script);
       return script;
 }
-
-
